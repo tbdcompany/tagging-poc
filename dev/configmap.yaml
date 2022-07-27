@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: abc
 data:
-  x: 3
+  x: "3"

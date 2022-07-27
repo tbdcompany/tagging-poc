@@ -1,0 +1,24 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: GitRepository
+metadata:
+  name: example
+  namespace: default
+spec:
+  interval: 5s
+  url: https://github.com/tbdcompany/tagging-poc
+  ref:
+    tag: dev
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: example
+  namespace: default
+spec:
+  interval: 10m
+  targetNamespace: default
+  sourceRef:
+    kind: GitRepository
+    name: example
+  path: "./dev"
+  prune: true
