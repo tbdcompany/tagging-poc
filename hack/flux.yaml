@@ -7,8 +7,8 @@ spec:
   interval: 5s
   url: https://github.com/tbdcompany/tagging-poc
   ref:
-    semver: ">=0.0.0"
-    #tag: dev
+    tag: dev
+    #semver: ">=0.0.0"
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
