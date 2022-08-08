@@ -20,4 +20,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: exit 1
+      - run: git tag xyz
+      - run: git push xyz
