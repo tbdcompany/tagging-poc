@@ -1,9 +1,9 @@
-name: pre-commit
+name: demo
 
 on:
   pull_request:
   push:
-    branches: [main]
+    tags: [forprd]
 
 jobs:
   Explore-GitHub-Actions:
@@ -21,9 +21,7 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: |
-          date > generated.txt
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add .
-          git commit -m "generated"
-          git push
+          git tag --force prd
+          git push --force origin prd
